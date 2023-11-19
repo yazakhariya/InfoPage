@@ -6,6 +6,9 @@ import UiModal from 'src/components/UiModal/UiModal'
 type Props = {
   visible: number
 }
+// TODO доделать карточку (оформление шрифта) 
+// grid layout
+// адаптировать
 
 export default function UserList({ visible }: Props) {
   const { user, error, loading } = useTypesSelector((state) => state.user)
