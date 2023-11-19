@@ -1,5 +1,7 @@
 # Info Page
 
+! Due to CORS policy to use this app you need to install the "moesif CORS extension". Once installed, click it in your browser to activate the extension. Make sure the icon’s label goes from [off] to [on].
+
 ## Stack:
 - React
 - Redux
@@ -15,4 +17,3 @@ git clone https://github.com/yazakhariya/InfoPage.git
 ```bash 
 npm run dev
 ```
-## Деплой проекта

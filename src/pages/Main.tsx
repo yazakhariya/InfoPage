@@ -1,12 +1,13 @@
 import * as React from 'react'
+import * as S from './Main.style'
 import { useAction } from 'src/api/hooks/useAction'
 import { useTypesSelector } from 'src/api/hooks/useSelector'
-import UiCard from 'src/components/UiCard/UiCard'
+import UserList from './components/UserList/UserList'
 
 export default function Main() {
-  const [visible, setVisible] = React.useState(4)
+  const [visible, setVisible] = React.useState<number>(4)
 
-  const { user, error, loading } = useTypesSelector((state) => state.user)
+  const { user } = useTypesSelector((state) => state.user)
 
   const { fetchUsers } = useAction()
 
@@ -18,31 +19,11 @@ export default function Main() {
     setVisible((prevNumber) => prevNumber + 4)
   }
 
-  const UserList = (
-    <>
-      {error ? (
-        <h1>{error}</h1>
-      ) : loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        user
-          .slice(0, visible)
-          .map((el) => (
-            <UiCard
-              key={el.name}
-              name={el.name}
-              email={el.email}
-              img={el.picture}
-            />
-          ))
-      )}
-    </>
-  )
   return (
     <>
-      {UserList ? UserList : null}
+      <UserList visible={visible} />
       {visible < user.length ? (
-        <button onClick={handleButtonClick}></button>
+        <S.Button onClick={handleButtonClick}>Load more...</S.Button>
       ) : null}
     </>
   )
