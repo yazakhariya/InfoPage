@@ -43,6 +43,30 @@ export const ImgWrapper = styled.div<{ src?: string; open?: boolean }>`
   background-size: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+
+  // tablet version
+  @media (max-width: 1024px) {
+    ${(props) =>
+      props.open === true
+        ? `width: 375px;
+    height: 275px;`
+        : `width: 275px;
+    height: 175px;
+    cursor: pointer;
+    `}
+  }
+
+  // mobile version
+  @media (max-width: 768px) {
+    ${(props) =>
+      props.open === true
+        ? `width: 350px;
+    height: 250px;`
+        : `width: 250px;
+    height: 150px;
+    cursor: pointer;
+    `}
+  }
 `
 
 export const UserInfoWrapper = styled.div<{ open?: boolean }>`
@@ -51,6 +75,16 @@ export const UserInfoWrapper = styled.div<{ open?: boolean }>`
   flex-direction: column;
   ${(props) => (props.open === true ? `width: 400px;` : `width: 300px;`)}
   text-align: justify;
+
+  // tablet version
+  @media (max-width: 1024px) {
+    ${(props) => (props.open === true ? `width: 375px;` : `width: 275px;`)}
+  }
+
+  // mobile version
+  @media (max-width: 768px) {
+    ${(props) => (props.open === true ? `width: 350px;` : `width: 250px;`)}
+  }
 `
 
 export const UserCardText = styled.span`

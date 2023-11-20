@@ -29,10 +29,32 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+
+  // tablet version
+  @media (max-width: 1024px) {
+    padding: 40px;
+  }
+
+  // mobile version
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
 `
 export const UserListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 55px;
   justify-items: center;
+
+  // tablet version
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+
+  // mobile version
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+  }
 `
