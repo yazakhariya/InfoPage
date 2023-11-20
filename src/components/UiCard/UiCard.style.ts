@@ -34,9 +34,10 @@ export const ImgWrapper = styled.div<{ src?: string; open?: boolean }>`
       ? `width: 400px;
   height: 300px;`
       : `width: 300px;
-  height: 200px;`}
-  overflow: hidden;
+  height: 200px;
   cursor: pointer;
+  `}
+  overflow: hidden;
   background-image: url(${(props) => props.src});
   background-position: top;
   background-size: cover;
@@ -44,14 +45,12 @@ export const ImgWrapper = styled.div<{ src?: string; open?: boolean }>`
   border-top-right-radius: 15px;
 `
 
-export const UserInfoWrapper = styled.div<{open?: boolean }>`
+export const UserInfoWrapper = styled.div<{ open?: boolean }>`
   padding: 15px;
   display: flex;
   flex-direction: column;
-  ${(props) =>
-    props.open === true
-      ? `width: 400px;`
-      : `width: 300px;`}
+  ${(props) => (props.open === true ? `width: 400px;` : `width: 300px;`)}
+  text-align: justify;
 `
 
 export const UserCardText = styled.span`
