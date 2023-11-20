@@ -7,29 +7,45 @@ type Props = {
   img: string
   phone?: string
   about?: string
+  open?: boolean
   onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export default function UiCard({
-  name,
-  email,
-  img,
-  age,
-  phone,
-  about,
-  onClick,
-}: Props) {
+export default function UiCard(props: Props) {
   return (
     <S.CardWrapper>
-      <S.ImgWrapper>
-        <S.UserImg onClick={onClick} src={img}></S.UserImg>
-      </S.ImgWrapper>
-      <S.UserInfoWrapper>
-        <S.UserName>name: {name}</S.UserName>
-        {age ? <span>age: {age}</span> : null}
-        <S.UserEmail>email: {email}</S.UserEmail>
-        {phone ? <span>phone: {phone}</span> : null}
-        {about ? <span>about: {about}</span> : null}
+      <S.ImgWrapper
+        open={props.open}
+        onClick={props.onClick}
+        src={props.img}
+      ></S.ImgWrapper>
+      <S.UserInfoWrapper open={props.open}>
+        <div>
+          <S.UserCardText>name: </S.UserCardText>
+          {props.name}
+        </div>
+        {props.age ? (
+          <div>
+            <S.UserCardText>age: </S.UserCardText>
+            {props.age}
+          </div>
+        ) : null}
+        <div>
+          <S.UserCardText>email: </S.UserCardText>
+          {props.email}
+        </div>
+        {props.phone ? (
+          <div>
+            <S.UserCardText>phone: </S.UserCardText>
+            {props.phone}
+          </div>
+        ) : null}
+        {props.about ? (
+          <div>
+            <S.UserCardText>about: </S.UserCardText>
+            {props.about}
+          </div>
+        ) : null}
       </S.UserInfoWrapper>
     </S.CardWrapper>
   )

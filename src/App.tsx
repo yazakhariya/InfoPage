@@ -1,7 +1,13 @@
-import Main from "./pages/Main"
+import Main from './pages/Main'
+import { GlobalStyle } from './theme/global.style'
 
 function App() {
-  return <Main />
+  return (
+    <>
+      <GlobalStyle />
+      <Main />
+    </>
+  )
 }
 
 export default App

@@ -23,3 +23,16 @@ export const Button = styled.button`
     box-shadow: 2px 2px 5px #000;
   }
 `
+export const MainWrapper = styled.div`
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+`
+export const UserListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 55px;
+  justify-items: center;
+`

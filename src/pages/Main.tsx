@@ -20,11 +20,13 @@ export default function Main() {
   }
 
   return (
-    <>
-      <UserList visible={visible} />
+    <S.MainWrapper>
+      <S.UserListWrapper>
+        <UserList visible={visible} />
+      </S.UserListWrapper>
       {visible < user.length ? (
         <S.Button onClick={handleButtonClick}>Load more...</S.Button>
       ) : null}
-    </>
+    </S.MainWrapper>
   )
 }

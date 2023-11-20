@@ -24,32 +24,36 @@ export const CardWrapper = styled.div`
 
   border-radius: 15px;
   margin-bottom: 20px;
-  width: 300px;
   -webkit-animation: shadow-drop-center 0.4s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 `
-export const ImgWrapper = styled.div`
-  width: 300px;
-  height: 200px;
+export const ImgWrapper = styled.div<{ src?: string; open?: boolean }>`
+  ${(props) =>
+    props.open === true
+      ? `width: 400px;
+  height: 300px;`
+      : `width: 300px;
+  height: 200px;`}
   overflow: hidden;
   cursor: pointer;
-`
-export const UserImg = styled.img`
-  width: 300px;
-  height: 310px;
-  border-radius: 15px;
+  background-image: url(${(props) => props.src});
+  background-position: top;
+  background-size: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 `
 
-export const UserInfoWrapper = styled.div`
+export const UserInfoWrapper = styled.div<{open?: boolean }>`
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  ${(props) =>
+    props.open === true
+      ? `width: 400px;`
+      : `width: 300px;`}
 `
 
-export const UserName = styled.span`
-  
+export const UserCardText = styled.span`
+  color: #aaaaaa;
 `
-
-export const UserEmail = styled.span``

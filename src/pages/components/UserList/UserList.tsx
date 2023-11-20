@@ -27,6 +27,7 @@ export default function UserList({ visible }: Props) {
   const ExtraUserInfo = openModal ? (
     <UiModal modalClose={() => setOpenModal(null)}>
       <UiCard
+        open={openModal}
         name={userInfo[0].name}
         age={userInfo[0].age}
         about={userInfo[0].about}
